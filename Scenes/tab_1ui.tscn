@@ -35,13 +35,15 @@ script = ExtResource("1_uw35b")
 [node name="Play_game_ProgBar" type="ProgressBar" parent="."]
 show_behind_parent = true
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -177.0
-offset_top = 102.0
-offset_right = 173.0
-offset_bottom = 175.0
+anchors_preset = -1
+anchor_left = 0.408
+anchor_top = 0.094
+anchor_right = 0.59
+anchor_bottom = 0.162
+offset_left = -0.360046
+offset_top = 0.479996
+offset_right = 0.199951
+offset_bottom = 0.0399933
 grow_horizontal = 2
 theme = ExtResource("3_3qtp6")
 script = ExtResource("2_nmq3c")
@@ -49,13 +51,14 @@ script = ExtResource("2_nmq3c")
 [node name="Play_game" type="Button" parent="Play_game_ProgBar"]
 top_level = true
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -177.0
+anchors_preset = -1
+anchor_left = 0.408
+anchor_right = 0.59
+anchor_bottom = 0.077
+offset_left = -0.360046
 offset_top = 6.0
-offset_right = 173.0
-offset_bottom = 83.0
+offset_right = 0.199951
+offset_bottom = -0.160011
 grow_horizontal = 2
 theme = ExtResource("3_3qtp6")
 toggle_mode = true
@@ -68,14 +71,14 @@ wait_time = 0.1
 [node name="GridContainer" type="GridContainer" parent="Play_game_ProgBar"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -2.218
-anchor_top = -1.151
-anchor_right = -2.218
-anchor_bottom = -1.151
-offset_left = 20.3
-offset_top = 0.0230026
-offset_right = 307.3
-offset_bottom = 233.023
+anchor_left = -2.194
+anchor_top = -1.274
+anchor_right = -1.349
+anchor_bottom = 1.918
+offset_left = -0.0999756
+offset_top = 0.00200653
+offset_right = 0.150024
+offset_bottom = -0.0140076
 theme = SubResource("Theme_ani4c")
 columns = 2
 
@@ -126,10 +129,15 @@ script = ExtResource("9_m3jr4")
 
 [node name="Player_exp_ProgBar" type="ProgressBar" parent="."]
 layout_mode = 1
-offset_left = 328.0
-offset_top = 74.0
-offset_right = 674.0
-offset_bottom = 155.0
+anchors_preset = -1
+anchor_left = 0.171
+anchor_top = 0.069
+anchor_right = 0.351
+anchor_bottom = 0.144
+offset_left = -0.320007
+offset_top = -0.520004
+offset_right = 0.0799561
+offset_bottom = -0.520004
 theme = ExtResource("3_3qtp6")
 allow_greater = true
 script = ExtResource("10_chrru")
@@ -137,12 +145,13 @@ script = ExtResource("10_chrru")
 [node name="Label" type="Label" parent="Player_exp_ProgBar"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = -0.901
-anchor_bottom = -0.901
+anchor_top = 0.963
+anchor_right = 0.991
+anchor_bottom = 1.852
 offset_left = 3.0
-offset_top = 150.981
-offset_right = 343.0
-offset_bottom = 222.981
+offset_top = -0.00300598
+offset_right = 0.113983
+offset_bottom = -0.0120087
 text = "Level: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -152,21 +161,24 @@ script = ExtResource("11_av5xe")
 layout_mode = 1
 anchors_preset = -1
 anchor_top = -0.815
-anchor_bottom = -0.815
+anchor_right = 1.0
+anchor_bottom = -0.012
 offset_top = -6.98499
-offset_right = 348.0
-offset_bottom = 65.015
+offset_right = 2.0
+offset_bottom = -0.028
 text = "Experience"
 horizontal_alignment = 1
 
 [node name="Skills_label" type="Label" parent="."]
 layout_mode = 2
+anchor_left = 0.018
 anchor_top = 0.467
-anchor_bottom = 0.467
-offset_left = 34.0
+anchor_right = 0.166
+anchor_bottom = 0.533
+offset_left = -0.560001
 offset_top = -0.360016
-offset_right = 170.0
-offset_bottom = 71.64
+offset_right = -148.72
+offset_bottom = 0.359924
 grow_vertical = 2
 theme = ExtResource("3_3qtp6")
 text = "Learn skills:"
@@ -175,11 +187,12 @@ text = "Learn skills:"
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.533
-anchor_bottom = 0.533
+anchor_right = 0.359
+anchor_bottom = 0.781
 offset_left = 24.0
 offset_top = 0.359924
-offset_right = 690.0
-offset_bottom = 268.36
+offset_right = 0.719971
+offset_bottom = 0.519958
 grow_vertical = 2
 script = ExtResource("12_ne02h")
 
@@ -202,11 +215,12 @@ wait_time = 0.1
 [node name="Resume_container" type="GridContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.971
+anchor_left = 0.71
 anchor_right = 0.971
-offset_left = -500.32
+anchor_bottom = 0.707
+offset_left = 0.799927
 offset_right = 0.67981
-offset_bottom = 764.0
+offset_bottom = 0.440002
 grow_horizontal = 0
 theme = SubResource("Theme_unbsm")
 script = ExtResource("14_pfwpo")
@@ -232,11 +246,30 @@ horizontal_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="Label"]
 show_behind_parent = true
-layout_mode = 0
-offset_left = 14.0
-offset_right = 565.0
-offset_bottom = 80.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.024
+anchor_right = 0.981
+anchor_bottom = 0.879
+offset_left = 0.176
+offset_right = -0.0560303
+offset_bottom = 0.0111008
 color = Color(0, 0, 0, 1)
+
+[node name="CheckButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.416354
+anchor_top = 0.434704
+anchor_right = 0.682313
+anchor_bottom = 0.517
+offset_left = 0.599976
+offset_top = 0.519958
+offset_right = 0.959961
+offset_bottom = -0.360046
+theme = ExtResource("3_3qtp6")
+text = "Fullscreen toggle"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="progbar_full_l" from="Play_game_ProgBar" to="Play_game_ProgBar/GridContainer/SoloQ_L_amount" method="_on_play_game_prog_bar_progbar_full_l"]
 [connection signal="progbar_full_l" from="Play_game_ProgBar" to="Play_game_ProgBar/GridContainer/SoloQ_WR_amount" method="_on_play_game_prog_bar_progbar_full_l"]
@@ -254,3 +287,4 @@ color = Color(0, 0, 0, 1)
 [connection signal="skill_progbar_full" from="Skills_container/Learn_skill_ProgBar" to="Skills_container" method="_on_learn_skill_prog_bar_skill_progbar_full"]
 [connection signal="skill_progbar_full" from="Skills_container/Learn_skill_ProgBar" to="Resume_container" method="_on_learn_skill_prog_bar_skill_progbar_full"]
 [connection signal="timeout" from="Skills_container/Learn_skill_ProgBar/Timer" to="Skills_container/Learn_skill_ProgBar" method="_on_timer_timeout"]
+[connection signal="pressed" from="CheckButton" to="." method="_on_check_button_pressed"]
