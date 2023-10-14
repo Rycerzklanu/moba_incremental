@@ -5,8 +5,8 @@ func _ready():
 	$Player_exp_ProgBar.hide()
 	$Skills_container.hide()
 	$Skills_label.hide()
-	$Resume_container.hide()
-
+	$ScrollContainer/Resume_container.hide()
+	$"RPG Skills".show()
 func _on_player_exp_prog_bar_changed():
 	$Player_exp_ProgBar.show()
 
@@ -19,7 +19,7 @@ func _on_label_level_signal():
 func _on_learn_skill_prog_bar_skill_progbar_full():
 	resume_container += 1
 	if resume_container == 2:
-		$Resume_container.show()
+		$ScrollContainer/Resume_container.show()
 
 
 func _on_check_button_pressed():

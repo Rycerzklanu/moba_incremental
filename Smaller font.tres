@@ -1,0 +1,5 @@
+[gd_resource type="Theme" format=3 uid="uid://bv7x4qqg8vji6"]
+
+[resource]
+GridContainer/constants/h_separation = 20
+Label/font_sizes/font_size = 25

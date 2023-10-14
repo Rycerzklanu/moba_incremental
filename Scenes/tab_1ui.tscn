@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d2uxgs5muwiq8"]
+[gd_scene load_steps=25 format=3 uid="uid://d2uxgs5muwiq8"]
 
 [ext_resource type="Script" path="res://Scripts/UI_1/Tab1UI.gd" id="1_uw35b"]
 [ext_resource type="Script" path="res://Scripts/UI_1/Play_game_PB.gd" id="2_nmq3c"]
@@ -15,6 +15,12 @@
 [ext_resource type="Script" path="res://Scripts/UI_1/Skills_container.gd" id="12_ne02h"]
 [ext_resource type="Script" path="res://Scenes/Skills_flavor_text.gd" id="14_3q28p"]
 [ext_resource type="Script" path="res://Scripts/UI_1/Resume_container.gd" id="14_pfwpo"]
+[ext_resource type="Theme" uid="uid://bv7x4qqg8vji6" path="res://Smaller font.tres" id="16_0i1mh"]
+[ext_resource type="Script" path="res://Scenes/RPG Skills.gd" id="16_wgwvw"]
+[ext_resource type="Script" path="res://Scenes/RPG_Skills_Label.gd" id="17_kqcnd"]
+[ext_resource type="Script" path="res://Scenes/Vision_label.gd" id="18_85nc4"]
+[ext_resource type="Script" path="res://Scenes/Champ_mast_label.gd" id="19_bn7ce"]
+[ext_resource type="Script" path="res://Scenes/Knowledge_label.gd" id="20_o75m5"]
 
 [sub_resource type="Theme" id="Theme_ani4c"]
 
@@ -33,6 +39,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_3qtp6")
 script = ExtResource("1_uw35b")
 
 [node name="Play_game_ProgBar" type="ProgressBar" parent="."]
@@ -227,27 +234,32 @@ script = ExtResource("14_3q28p")
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.01
+anchor_left = 0.002
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -0.0800004
+offset_left = -0.016
 offset_bottom = 1.0
 color = Color(0, 0, 0, 1)
 
-[node name="Resume_container" type="GridContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.71
-anchor_right = 0.971
-anchor_bottom = 0.707
-offset_left = 0.799927
-offset_right = 0.67981
-offset_bottom = 0.440002
-grow_horizontal = 0
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+anchor_left = 0.729
+anchor_top = 0.00462963
+anchor_right = 0.999604
+anchor_bottom = 0.564
+offset_left = -0.680054
+offset_top = -5.0
+offset_right = 0.759888
+offset_bottom = -0.119995
+theme = ExtResource("3_3qtp6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Resume_container" type="GridContainer" parent="ScrollContainer"]
+layout_mode = 2
 theme = SubResource("Theme_unbsm")
 script = ExtResource("14_pfwpo")
 
-[node name="Resume_label" type="Label" parent="Resume_container"]
+[node name="Resume_label" type="Label" parent="ScrollContainer/Resume_container"]
 layout_mode = 2
 text = "Skills:"
 horizontal_alignment = 1
@@ -267,6 +279,62 @@ theme = ExtResource("3_3qtp6")
 text = "Fullscreen toggle"
 metadata/_edit_use_anchors_ = true
 
+[node name="RPG Skills" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.728646
+anchor_top = 0.587963
+anchor_right = 1.0
+anchor_bottom = 0.997
+offset_right = 1.0
+offset_bottom = 0.23999
+theme = ExtResource("16_0i1mh")
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 4
+columns = 3
+script = ExtResource("16_wgwvw")
+metadata/_edit_use_anchors_ = true
+
+[node name="Vision_label" type="Label" parent="RPG Skills"]
+layout_mode = 2
+theme = ExtResource("16_0i1mh")
+script = ExtResource("18_85nc4")
+
+[node name="Mechanics_label" type="Label" parent="RPG Skills"]
+layout_mode = 2
+theme = ExtResource("16_0i1mh")
+script = ExtResource("17_kqcnd")
+
+[node name="Knowledge_label" type="Label" parent="RPG Skills"]
+layout_mode = 2
+theme = ExtResource("16_0i1mh")
+script = ExtResource("20_o75m5")
+
+[node name="Champ_mast_label" type="Label" parent="RPG Skills"]
+layout_mode = 2
+theme = ExtResource("16_0i1mh")
+script = ExtResource("19_bn7ce")
+
+[node name="Understanding_label" type="Label" parent="RPG Skills"]
+layout_mode = 2
+theme = ExtResource("16_0i1mh")
+
+[node name="Label6" type="Label" parent="RPG Skills"]
+layout_mode = 2
+theme = ExtResource("16_0i1mh")
+
+[node name="Label7" type="Label" parent="RPG Skills"]
+layout_mode = 2
+theme = ExtResource("16_0i1mh")
+
+[node name="Label8" type="Label" parent="RPG Skills"]
+layout_mode = 2
+theme = ExtResource("16_0i1mh")
+
+[node name="Label9" type="Label" parent="RPG Skills"]
+layout_mode = 2
+theme = ExtResource("16_0i1mh")
+
 [connection signal="button_stop1" from="Play_game_ProgBar" to="Play_game_ProgBar/Play_game" method="_on_play_game_prog_bar_button_stop_1"]
 [connection signal="progbar_full_l" from="Play_game_ProgBar" to="Play_game_ProgBar/GridContainer/SoloQ_L_amount" method="_on_play_game_prog_bar_progbar_full_l"]
 [connection signal="progbar_full_l" from="Play_game_ProgBar" to="Play_game_ProgBar/GridContainer/SoloQ_WR_amount" method="_on_play_game_prog_bar_progbar_full_l"]
@@ -285,7 +353,11 @@ metadata/_edit_use_anchors_ = true
 [connection signal="skill_progbar_full" from="Skills_container/Learn_skill_ProgBar" to="." method="_on_learn_skill_prog_bar_skill_progbar_full"]
 [connection signal="skill_progbar_full" from="Skills_container/Learn_skill_ProgBar" to="Skills_container" method="_on_learn_skill_prog_bar_skill_progbar_full"]
 [connection signal="skill_progbar_full" from="Skills_container/Learn_skill_ProgBar" to="Skills_container/Skills_flavor_text" method="_on_learn_skill_prog_bar_skill_progbar_full"]
-[connection signal="skill_progbar_full" from="Skills_container/Learn_skill_ProgBar" to="Resume_container" method="_on_learn_skill_prog_bar_skill_progbar_full"]
+[connection signal="skill_progbar_full" from="Skills_container/Learn_skill_ProgBar" to="ScrollContainer/Resume_container" method="_on_learn_skill_prog_bar_skill_progbar_full"]
+[connection signal="skill_progbar_full" from="Skills_container/Learn_skill_ProgBar" to="RPG Skills/Mechanics_label" method="_on_learn_skill_prog_bar_skill_progbar_full"]
+[connection signal="skill_progbar_full" from="Skills_container/Learn_skill_ProgBar" to="RPG Skills/Vision_label" method="_on_learn_skill_prog_bar_skill_progbar_full"]
+[connection signal="skill_progbar_full" from="Skills_container/Learn_skill_ProgBar" to="RPG Skills/Champ_mast_label" method="_on_learn_skill_prog_bar_skill_progbar_full"]
+[connection signal="skill_progbar_full" from="Skills_container/Learn_skill_ProgBar" to="RPG Skills/Knowledge_label" method="_on_learn_skill_prog_bar_skill_progbar_full"]
 [connection signal="stop_button" from="Skills_container/Learn_skill_ProgBar" to="Skills_container/Learn_skill" method="_on_learn_skill_prog_bar_stop_button"]
 [connection signal="timeout" from="Skills_container/Learn_skill_ProgBar/Timer" to="Skills_container/Learn_skill_ProgBar" method="_on_timer_timeout"]
 [connection signal="pressed" from="CheckButton" to="." method="_on_check_button_pressed"]
