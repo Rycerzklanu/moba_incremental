@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://baaciauo3mwqu"]
-
-[ext_resource type="PackedScene" uid="uid://d2uxgs5muwiq8" path="res://Scenes/tab_1ui.tscn" id="1_72owr"]
-
-[node name="Node" type="Node"]
-
-[node name="Tab1UI" parent="." instance=ExtResource("1_72owr")]
-metadata/_edit_group_ = true
