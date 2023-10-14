@@ -1,8 +1,8 @@
 extends ProgressBar
 signal progbar_full_w
 signal progbar_full_l 
+signal button_stop1
 var wchance = 0.10
-
 func _on_play_game_toggled(button_pressed):
 	_on_timer_timeout()
 	if !button_pressed:
@@ -18,7 +18,8 @@ func _process(_delta):
 
 func _on_timer_timeout():
 	$Timer.start()
-	value += 20
+	value += 70
 	
-	
-	
+func _on_learn_skill_toggled(button_pressed):
+	if button_pressed:
+		emit_signal("button_stop1")

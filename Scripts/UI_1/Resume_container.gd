@@ -11,3 +11,9 @@ func _on_learn_skill_prog_bar_skill_progbar_full():
 	if skill_level == 2:
 		$Resume_label.set_text(resume_contents + "
 		" + "- Using the keyboard")
+	if skill_level == 5:
+		$Resume_label.set_text(resume_contents + "
+		" + "- Using the mouse")
+	if skill_level == 7:
+		$Resume_label.set_text(resume_contents + "
+		" + "- EOC")
