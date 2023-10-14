@@ -1,0 +1,291 @@
+[gd_scene load_steps=19 format=3 uid="uid://d2uxgs5muwiq8"]
+
+[ext_resource type="Script" path="res://Scripts/UI_1/Tab1UI.gd" id="1_uw35b"]
+[ext_resource type="Script" path="res://Scripts/UI_1/Play_game_PB.gd" id="2_nmq3c"]
+[ext_resource type="Theme" uid="uid://cmyvtqykhbior" path="res://main_theme.tres" id="3_3qtp6"]
+[ext_resource type="Script" path="res://Scenes/Play_game.gd" id="4_mpswu"]
+[ext_resource type="Script" path="res://Scripts/UI_1/SoloQ_W_label.gd" id="6_87t2r"]
+[ext_resource type="Script" path="res://Scripts/UI_1/SoloQ_W_amount.gd" id="7_mbsye"]
+[ext_resource type="Script" path="res://Scripts/UI_1/SoloQ_L_amount.gd" id="8_4lyrx"]
+[ext_resource type="Script" path="res://Scripts/UI_1/SoloQ_WR_amount.gd" id="9_m3jr4"]
+[ext_resource type="Script" path="res://Scripts/UI_1/Player_exp_ProgBar.gd" id="10_chrru"]
+[ext_resource type="Script" path="res://Scripts/UI_1/playerexplabel.gd" id="11_av5xe"]
+[ext_resource type="Script" path="res://Scenes/Learn_skill.gd" id="11_fw10i"]
+[ext_resource type="Script" path="res://Scripts/UI_1/Learn_skill_ProgBar.gd" id="12_d7823"]
+[ext_resource type="Script" path="res://Scripts/UI_1/Skills_container.gd" id="12_ne02h"]
+[ext_resource type="Script" path="res://Scenes/Skills_flavor_text.gd" id="14_3q28p"]
+[ext_resource type="Script" path="res://Scripts/UI_1/Resume_container.gd" id="14_pfwpo"]
+
+[sub_resource type="Theme" id="Theme_ani4c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67brh"]
+bg_color = Color(0, 0.802278, 0, 1)
+
+[sub_resource type="Theme" id="Theme_unbsm"]
+default_base_scale = 1.0
+default_font_size = 40
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_67brh")
+
+[node name="Tab1UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uw35b")
+
+[node name="Play_game_ProgBar" type="ProgressBar" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.408
+anchor_top = 0.094
+anchor_right = 0.59
+anchor_bottom = 0.162
+offset_left = -0.360046
+offset_top = 0.479996
+offset_right = 0.199951
+offset_bottom = 0.0399933
+grow_horizontal = 2
+theme = ExtResource("3_3qtp6")
+script = ExtResource("2_nmq3c")
+
+[node name="Play_game" type="Button" parent="Play_game_ProgBar"]
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.408
+anchor_right = 0.59
+anchor_bottom = 0.077
+offset_left = -0.360046
+offset_top = 6.0
+offset_right = 0.199951
+offset_bottom = -0.160011
+grow_horizontal = 2
+theme = ExtResource("3_3qtp6")
+toggle_mode = true
+text = "Play the game"
+script = ExtResource("4_mpswu")
+
+[node name="Timer" type="Timer" parent="Play_game_ProgBar"]
+process_callback = 0
+wait_time = 0.1
+
+[node name="GridContainer" type="GridContainer" parent="Play_game_ProgBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.194
+anchor_top = -1.274
+anchor_right = -1.349
+anchor_bottom = 1.918
+offset_left = -0.0999756
+offset_top = 0.00200653
+offset_right = 0.150024
+offset_bottom = -0.0140076
+theme = SubResource("Theme_ani4c")
+columns = 2
+
+[node name="SoloQ_W_label" type="Label" parent="Play_game_ProgBar/GridContainer"]
+layout_mode = 2
+theme = ExtResource("3_3qtp6")
+text = "W:"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_87t2r")
+
+[node name="SoloQ_W_amount" type="Label" parent="Play_game_ProgBar/GridContainer"]
+layout_mode = 2
+theme = ExtResource("3_3qtp6")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_mbsye")
+
+[node name="SoloQ_L_label" type="Label" parent="Play_game_ProgBar/GridContainer"]
+layout_mode = 2
+theme = ExtResource("3_3qtp6")
+text = "L:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SoloQ_L_amount" type="Label" parent="Play_game_ProgBar/GridContainer"]
+layout_mode = 2
+theme = ExtResource("3_3qtp6")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_4lyrx")
+
+[node name="SoloQ_WR_label" type="Label" parent="Play_game_ProgBar/GridContainer"]
+layout_mode = 2
+theme = ExtResource("3_3qtp6")
+text = "W/R:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SoloQ_WR_amount" type="Label" parent="Play_game_ProgBar/GridContainer"]
+layout_mode = 2
+theme = ExtResource("3_3qtp6")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("9_m3jr4")
+
+[node name="Player_exp_ProgBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.171
+anchor_top = 0.069
+anchor_right = 0.351
+anchor_bottom = 0.144
+offset_left = -0.320007
+offset_top = -0.520004
+offset_right = 0.0799561
+offset_bottom = -0.520004
+theme = ExtResource("3_3qtp6")
+allow_greater = true
+script = ExtResource("10_chrru")
+
+[node name="Label" type="Label" parent="Player_exp_ProgBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.963
+anchor_right = 0.991
+anchor_bottom = 1.852
+offset_left = 3.0
+offset_top = -0.00300598
+offset_right = 0.113983
+offset_bottom = -0.0120087
+text = "Level: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("11_av5xe")
+
+[node name="Label2" type="Label" parent="Player_exp_ProgBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.815
+anchor_right = 1.0
+anchor_bottom = -0.012
+offset_top = -6.98499
+offset_right = 2.0
+offset_bottom = -0.028
+text = "Experience"
+horizontal_alignment = 1
+
+[node name="Skills_label" type="Label" parent="."]
+layout_mode = 2
+anchor_left = 0.018
+anchor_top = 0.467
+anchor_right = 0.166
+anchor_bottom = 0.533
+offset_left = -0.560001
+offset_top = -0.360016
+offset_right = -148.72
+offset_bottom = 0.359924
+grow_vertical = 2
+theme = ExtResource("3_3qtp6")
+text = "Learn skills:"
+
+[node name="Skills_container" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.533
+anchor_right = 0.359
+anchor_bottom = 0.781
+offset_left = 24.0
+offset_top = 0.359924
+offset_right = 0.719971
+offset_bottom = 0.519958
+grow_vertical = 2
+script = ExtResource("12_ne02h")
+
+[node name="Learn_skill" type="Button" parent="Skills_container"]
+layout_mode = 2
+theme = ExtResource("3_3qtp6")
+toggle_mode = true
+text = "Plug in your monitor"
+script = ExtResource("11_fw10i")
+
+[node name="Learn_skill_ProgBar" type="ProgressBar" parent="Skills_container"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme = ExtResource("3_3qtp6")
+script = ExtResource("12_d7823")
+
+[node name="Timer" type="Timer" parent="Skills_container/Learn_skill_ProgBar"]
+process_callback = 0
+wait_time = 0.1
+
+[node name="Skills_flavor_text" type="Label" parent="Skills_container"]
+layout_mode = 2
+theme = ExtResource("3_3qtp6")
+horizontal_alignment = 1
+script = ExtResource("14_3q28p")
+
+[node name="ColorRect" type="ColorRect" parent="Skills_container/Skills_flavor_text"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.0800004
+offset_bottom = 1.0
+color = Color(0, 0, 0, 1)
+
+[node name="Resume_container" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.71
+anchor_right = 0.971
+anchor_bottom = 0.707
+offset_left = 0.799927
+offset_right = 0.67981
+offset_bottom = 0.440002
+grow_horizontal = 0
+theme = SubResource("Theme_unbsm")
+script = ExtResource("14_pfwpo")
+
+[node name="Resume_label" type="Label" parent="Resume_container"]
+layout_mode = 2
+text = "Skills:"
+horizontal_alignment = 1
+
+[node name="CheckButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.416354
+anchor_top = 0.434704
+anchor_right = 0.682313
+anchor_bottom = 0.517
+offset_left = 0.599976
+offset_top = 0.519958
+offset_right = 0.959961
+offset_bottom = -0.360046
+theme = ExtResource("3_3qtp6")
+text = "Fullscreen toggle"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_stop1" from="Play_game_ProgBar" to="Play_game_ProgBar/Play_game" method="_on_play_game_prog_bar_button_stop_1"]
+[connection signal="progbar_full_l" from="Play_game_ProgBar" to="Play_game_ProgBar/GridContainer/SoloQ_L_amount" method="_on_play_game_prog_bar_progbar_full_l"]
+[connection signal="progbar_full_l" from="Play_game_ProgBar" to="Play_game_ProgBar/GridContainer/SoloQ_WR_amount" method="_on_play_game_prog_bar_progbar_full_l"]
+[connection signal="progbar_full_l" from="Play_game_ProgBar" to="Player_exp_ProgBar" method="_on_play_game_prog_bar_progbar_full_l"]
+[connection signal="progbar_full_w" from="Play_game_ProgBar" to="Play_game_ProgBar/GridContainer/SoloQ_W_amount" method="_on_play_game_prog_bar_progbar_full_w"]
+[connection signal="progbar_full_w" from="Play_game_ProgBar" to="Play_game_ProgBar/GridContainer/SoloQ_WR_amount" method="_on_play_game_prog_bar_progbar_full_w"]
+[connection signal="progbar_full_w" from="Play_game_ProgBar" to="Player_exp_ProgBar" method="_on_play_game_prog_bar_progbar_full_w"]
+[connection signal="toggled" from="Play_game_ProgBar/Play_game" to="Play_game_ProgBar" method="_on_play_game_toggled"]
+[connection signal="toggled" from="Play_game_ProgBar/Play_game" to="Skills_container/Learn_skill_ProgBar" method="_on_play_game_toggled"]
+[connection signal="timeout" from="Play_game_ProgBar/Timer" to="Play_game_ProgBar" method="_on_timer_timeout"]
+[connection signal="changed" from="Player_exp_ProgBar" to="." method="_on_player_exp_prog_bar_changed"]
+[connection signal="changed" from="Player_exp_ProgBar" to="Player_exp_ProgBar/Label" method="_on_player_exp_prog_bar_changed"]
+[connection signal="level_signal" from="Player_exp_ProgBar/Label" to="." method="_on_label_level_signal"]
+[connection signal="toggled" from="Skills_container/Learn_skill" to="Play_game_ProgBar" method="_on_learn_skill_toggled"]
+[connection signal="toggled" from="Skills_container/Learn_skill" to="Skills_container/Learn_skill_ProgBar" method="_on_learn_skill_toggled"]
+[connection signal="skill_progbar_full" from="Skills_container/Learn_skill_ProgBar" to="." method="_on_learn_skill_prog_bar_skill_progbar_full"]
+[connection signal="skill_progbar_full" from="Skills_container/Learn_skill_ProgBar" to="Skills_container" method="_on_learn_skill_prog_bar_skill_progbar_full"]
+[connection signal="skill_progbar_full" from="Skills_container/Learn_skill_ProgBar" to="Skills_container/Skills_flavor_text" method="_on_learn_skill_prog_bar_skill_progbar_full"]
+[connection signal="skill_progbar_full" from="Skills_container/Learn_skill_ProgBar" to="Resume_container" method="_on_learn_skill_prog_bar_skill_progbar_full"]
+[connection signal="stop_button" from="Skills_container/Learn_skill_ProgBar" to="Skills_container/Learn_skill" method="_on_learn_skill_prog_bar_stop_button"]
+[connection signal="timeout" from="Skills_container/Learn_skill_ProgBar/Timer" to="Skills_container/Learn_skill_ProgBar" method="_on_timer_timeout"]
+[connection signal="pressed" from="CheckButton" to="." method="_on_check_button_pressed"]
