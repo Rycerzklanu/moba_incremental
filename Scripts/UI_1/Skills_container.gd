@@ -30,9 +30,9 @@ func _on_learn_skill_prog_bar_skill_progbar_full():
 	if skill_level_check == 10:
 		$Learn_skill.button_pressed = false
 		$Learn_skill.set_text("Learn champions")
-	if skill_level_check == 10:
+	if skill_level_check == 11:
 		$Learn_skill.button_pressed = false
 		$Learn_skill.set_text("Study the map layout")
-	if skill_level_check == 10:
+	if skill_level_check == 12:
 		$Learn_skill.button_pressed = false
 		$Learn_skill.set_text("End of content")
