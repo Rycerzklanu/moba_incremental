@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://d2uxgs5muwiq8"]
+[gd_scene load_steps=24 format=3 uid="uid://d2uxgs5muwiq8"]
 
 [ext_resource type="Script" path="res://Scripts/UI_1/Tab1UI.gd" id="1_uw35b"]
 [ext_resource type="Script" path="res://Scripts/UI_1/Play_game_PB.gd" id="2_nmq3c"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/UI_1/SoloQ_W_amount.gd" id="7_mbsye"]
 [ext_resource type="Script" path="res://Scripts/UI_1/SoloQ_L_amount.gd" id="8_4lyrx"]
 [ext_resource type="Script" path="res://Scripts/UI_1/SoloQ_WR_amount.gd" id="9_m3jr4"]
+[ext_resource type="Script" path="res://Scenes/Elo_amount.gd" id="9_w537t"]
 [ext_resource type="Script" path="res://Scripts/UI_1/Player_exp_ProgBar.gd" id="10_chrru"]
 [ext_resource type="Script" path="res://Scripts/UI_1/playerexplabel.gd" id="11_av5xe"]
 [ext_resource type="Script" path="res://Scenes/Learn_skill.gd" id="11_fw10i"]
@@ -72,7 +73,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="Play_game_ProgBar"]
 process_callback = 0
-wait_time = 0.1
+wait_time = 0.022
 
 [node name="GridContainer" type="GridContainer" parent="Play_game_ProgBar"]
 layout_mode = 1
@@ -133,6 +134,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("9_m3jr4")
 
+[node name="Elo_label" type="Label" parent="Play_game_ProgBar/GridContainer"]
+layout_mode = 2
+text = "Elo:"
+
+[node name="Elo_amount" type="Label" parent="Play_game_ProgBar/GridContainer"]
+layout_mode = 2
+text = "1000
+"
+script = ExtResource("9_w537t")
+
 [node name="Player_exp_ProgBar" type="ProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -178,7 +189,7 @@ horizontal_alignment = 1
 [node name="Skills_container" type="GridContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.690125
+anchor_left = 0.653667
 anchor_top = 0.029
 anchor_right = 0.984
 anchor_bottom = 0.174519
@@ -187,6 +198,7 @@ offset_top = -0.320002
 offset_right = 0.719971
 offset_bottom = 0.519989
 grow_vertical = 2
+theme = ExtResource("3_3qtp6")
 script = ExtResource("12_ne02h")
 metadata/_edit_use_anchors_ = true
 
@@ -242,7 +254,7 @@ metadata/_edit_use_anchors_ = true
 [node name="RPG Skills" type="GridContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.691542
+anchor_left = 0.654042
 anchor_top = 0.184296
 anchor_right = 1.0
 anchor_bottom = 0.474852
@@ -286,13 +298,16 @@ layout_mode = 2
 theme = ExtResource("3_3qtp6")
 script = ExtResource("21_gtyi2")
 
+[connection signal="progbar_full_l" from="." to="Play_game_ProgBar/GridContainer/SoloQ_L_amount" method="_on_tab_1ui_progbar_full_l"]
+[connection signal="progbar_full_l" from="." to="Play_game_ProgBar/GridContainer/SoloQ_WR_amount" method="_on_tab_1ui_progbar_full_l"]
+[connection signal="progbar_full_l" from="." to="Player_exp_ProgBar" method="_on_tab_1ui_progbar_full_l"]
+[connection signal="progbar_full_l" from="." to="Play_game_ProgBar/GridContainer/Elo_amount" method="_on_tab_1ui_progbar_full_l"]
+[connection signal="progbar_full_w" from="." to="Play_game_ProgBar/GridContainer/SoloQ_W_amount" method="_on_tab_1ui_progbar_full_w"]
+[connection signal="progbar_full_w" from="." to="Play_game_ProgBar/GridContainer/SoloQ_WR_amount" method="_on_tab_1ui_progbar_full_w"]
+[connection signal="progbar_full_w" from="." to="Player_exp_ProgBar" method="_on_tab_1ui_progbar_full_w"]
+[connection signal="progbar_full_w" from="." to="Play_game_ProgBar/GridContainer/Elo_amount" method="_on_tab_1ui_progbar_full_w"]
 [connection signal="button_stop1" from="Play_game_ProgBar" to="Play_game_ProgBar/Play_game" method="_on_play_game_prog_bar_button_stop_1"]
-[connection signal="progbar_full_l" from="Play_game_ProgBar" to="Play_game_ProgBar/GridContainer/SoloQ_L_amount" method="_on_play_game_prog_bar_progbar_full_l"]
-[connection signal="progbar_full_l" from="Play_game_ProgBar" to="Play_game_ProgBar/GridContainer/SoloQ_WR_amount" method="_on_play_game_prog_bar_progbar_full_l"]
-[connection signal="progbar_full_l" from="Play_game_ProgBar" to="Player_exp_ProgBar" method="_on_play_game_prog_bar_progbar_full_l"]
-[connection signal="progbar_full_w" from="Play_game_ProgBar" to="Play_game_ProgBar/GridContainer/SoloQ_W_amount" method="_on_play_game_prog_bar_progbar_full_w"]
-[connection signal="progbar_full_w" from="Play_game_ProgBar" to="Play_game_ProgBar/GridContainer/SoloQ_WR_amount" method="_on_play_game_prog_bar_progbar_full_w"]
-[connection signal="progbar_full_w" from="Play_game_ProgBar" to="Player_exp_ProgBar" method="_on_play_game_prog_bar_progbar_full_w"]
+[connection signal="valchanged" from="Play_game_ProgBar" to="." method="_on_play_game_prog_bar_valchanged"]
 [connection signal="toggled" from="Play_game_ProgBar/Play_game" to="Play_game_ProgBar" method="_on_play_game_toggled"]
 [connection signal="toggled" from="Play_game_ProgBar/Play_game" to="Skills_container/Learn_skill_ProgBar" method="_on_play_game_toggled"]
 [connection signal="timeout" from="Play_game_ProgBar/Timer" to="Play_game_ProgBar" method="_on_timer_timeout"]
@@ -306,8 +321,8 @@ script = ExtResource("21_gtyi2")
 [connection signal="skill_progbar_full" from="Skills_container/Learn_skill_ProgBar" to="RPG Skills/Vision_label" method="_on_learn_skill_prog_bar_skill_progbar_full"]
 [connection signal="skill_progbar_full" from="Skills_container/Learn_skill_ProgBar" to="RPG Skills/Mechanics_label" method="_on_learn_skill_prog_bar_skill_progbar_full"]
 [connection signal="skill_progbar_full" from="Skills_container/Learn_skill_ProgBar" to="RPG Skills/Knowledge_label" method="_on_learn_skill_prog_bar_skill_progbar_full"]
-[connection signal="skill_progbar_full" from="Skills_container/Learn_skill_ProgBar" to="RPG Skills/Champ_mast_label" method="_on_learn_skill_prog_bar_skill_progbar_full"]
 [connection signal="skill_progbar_full" from="Skills_container/Learn_skill_ProgBar" to="RPG Skills/Teamplay_label" method="_on_learn_skill_prog_bar_skill_progbar_full"]
+[connection signal="skill_progbar_full" from="Skills_container/Learn_skill_ProgBar" to="RPG Skills/Champ_mast_label" method="_on_learn_skill_prog_bar_skill_progbar_full"]
 [connection signal="stop_button" from="Skills_container/Learn_skill_ProgBar" to="Skills_container/Learn_skill" method="_on_learn_skill_prog_bar_stop_button"]
 [connection signal="timeout" from="Skills_container/Learn_skill_ProgBar/Timer" to="Skills_container/Learn_skill_ProgBar" method="_on_timer_timeout"]
 [connection signal="pressed" from="CheckButton" to="." method="_on_check_button_pressed"]
