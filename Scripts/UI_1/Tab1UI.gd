@@ -4,7 +4,6 @@ var fullscreen_val = 0
 func _ready():
 	$Player_exp_ProgBar.hide()
 	$Skills_container.hide()
-	$Skills_label.hide()
 	$ScrollContainer/Resume_container.hide()
 	$"RPG Skills".show()
 func _on_player_exp_prog_bar_changed():
@@ -13,7 +12,6 @@ func _on_player_exp_prog_bar_changed():
 
 func _on_label_level_signal():
 		$Skills_container.show()
-		$Skills_label.show()
 
 
 func _on_learn_skill_prog_bar_skill_progbar_full():

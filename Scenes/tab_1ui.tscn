@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://d2uxgs5muwiq8"]
+[gd_scene load_steps=24 format=3 uid="uid://d2uxgs5muwiq8"]
 
 [ext_resource type="Script" path="res://Scripts/UI_1/Tab1UI.gd" id="1_uw35b"]
 [ext_resource type="Script" path="res://Scripts/UI_1/Play_game_PB.gd" id="2_nmq3c"]
@@ -15,7 +15,6 @@
 [ext_resource type="Script" path="res://Scripts/UI_1/Skills_container.gd" id="12_ne02h"]
 [ext_resource type="Script" path="res://Scenes/Skills_flavor_text.gd" id="14_3q28p"]
 [ext_resource type="Script" path="res://Scripts/UI_1/Resume_container.gd" id="14_pfwpo"]
-[ext_resource type="Theme" uid="uid://bv7x4qqg8vji6" path="res://Smaller font.tres" id="16_0i1mh"]
 [ext_resource type="Script" path="res://Scenes/RPG Skills.gd" id="16_wgwvw"]
 [ext_resource type="Script" path="res://Scenes/RPG_Skills_Label.gd" id="17_kqcnd"]
 [ext_resource type="Script" path="res://Scenes/Vision_label.gd" id="18_85nc4"]
@@ -46,24 +45,26 @@ script = ExtResource("1_uw35b")
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.408
+anchor_left = 0.423917
 anchor_top = 0.094
-anchor_right = 0.59
-anchor_bottom = 0.162
-offset_left = -0.360046
+anchor_right = 0.570729
+anchor_bottom = 0.148
+offset_left = 0.0799561
 offset_top = 0.479996
-offset_right = 0.199951
-offset_bottom = 0.0399933
+offset_right = 0.200073
+offset_bottom = 0.160004
 grow_horizontal = 2
 theme = ExtResource("3_3qtp6")
 script = ExtResource("2_nmq3c")
+metadata/_edit_use_anchors_ = true
 
 [node name="Play_game" type="Button" parent="Play_game_ProgBar"]
 top_level = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.408
-anchor_right = 0.59
+anchor_left = 0.424667
+anchor_top = 0.0231481
+anchor_right = 0.570208
 anchor_bottom = 0.077
 offset_left = -0.360046
 offset_top = 6.0
@@ -74,6 +75,7 @@ theme = ExtResource("3_3qtp6")
 toggle_mode = true
 text = "Play the game"
 script = ExtResource("4_mpswu")
+metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="Play_game_ProgBar"]
 process_callback = 0
@@ -82,14 +84,14 @@ wait_time = 0.1
 [node name="GridContainer" type="GridContainer" parent="Play_game_ProgBar"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -2.194
-anchor_top = -1.274
-anchor_right = -1.349
-anchor_bottom = 1.918
-offset_left = -0.0999756
-offset_top = 0.00200653
-offset_right = 0.150024
-offset_bottom = -0.0140076
+anchor_left = -2.759
+anchor_top = -1.276
+anchor_right = -1.819
+anchor_bottom = 1.914
+offset_left = 0.0380249
+offset_top = 0.00800323
+offset_right = -0.0419922
+offset_bottom = -0.012001
 theme = SubResource("Theme_ani4c")
 columns = 2
 
@@ -141,14 +143,14 @@ script = ExtResource("9_m3jr4")
 [node name="Player_exp_ProgBar" type="ProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.171
+anchor_left = 0.193
 anchor_top = 0.069
-anchor_right = 0.351
-anchor_bottom = 0.144
-offset_left = -0.320007
-offset_top = -0.520004
-offset_right = 0.0799561
-offset_bottom = -0.520004
+anchor_right = 0.335
+anchor_bottom = 0.114
+offset_left = -0.559998
+offset_top = -0.519997
+offset_right = -0.200012
+offset_bottom = -0.12001
 theme = ExtResource("3_3qtp6")
 allow_greater = true
 script = ExtResource("10_chrru")
@@ -171,28 +173,14 @@ script = ExtResource("11_av5xe")
 [node name="Label2" type="Label" parent="Player_exp_ProgBar"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = -0.815
+anchor_top = -0.667
 anchor_right = 1.0
 anchor_bottom = -0.012
-offset_top = -6.98499
+offset_top = -22.317
 offset_right = 2.0
-offset_bottom = -0.028
+offset_bottom = -2.412
 text = "Experience"
 horizontal_alignment = 1
-
-[node name="Skills_label" type="Label" parent="."]
-layout_mode = 2
-anchor_left = 0.018
-anchor_top = 0.467
-anchor_right = 0.166
-anchor_bottom = 0.533
-offset_left = -0.560001
-offset_top = -0.360016
-offset_right = -148.72
-offset_bottom = 0.359924
-grow_vertical = 2
-theme = ExtResource("3_3qtp6")
-text = "Learn skills:"
 
 [node name="Skills_container" type="GridContainer" parent="."]
 layout_mode = 1
@@ -282,58 +270,57 @@ metadata/_edit_use_anchors_ = true
 [node name="RPG Skills" type="GridContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.728646
+anchor_left = 0.859375
 anchor_top = 0.587963
 anchor_right = 1.0
 anchor_bottom = 0.997
 offset_right = 1.0
 offset_bottom = 0.23999
-theme = ExtResource("16_0i1mh")
+theme = ExtResource("3_3qtp6")
 theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 4
-columns = 3
 script = ExtResource("16_wgwvw")
 metadata/_edit_use_anchors_ = true
 
 [node name="Vision_label" type="Label" parent="RPG Skills"]
 layout_mode = 2
-theme = ExtResource("16_0i1mh")
+theme = ExtResource("3_3qtp6")
 script = ExtResource("18_85nc4")
 
 [node name="Mechanics_label" type="Label" parent="RPG Skills"]
 layout_mode = 2
-theme = ExtResource("16_0i1mh")
+theme = ExtResource("3_3qtp6")
 script = ExtResource("17_kqcnd")
 
 [node name="Knowledge_label" type="Label" parent="RPG Skills"]
 layout_mode = 2
-theme = ExtResource("16_0i1mh")
+theme = ExtResource("3_3qtp6")
 script = ExtResource("20_o75m5")
 
 [node name="Champ_mast_label" type="Label" parent="RPG Skills"]
 layout_mode = 2
-theme = ExtResource("16_0i1mh")
+theme = ExtResource("3_3qtp6")
 script = ExtResource("19_bn7ce")
 
 [node name="Understanding_label" type="Label" parent="RPG Skills"]
 layout_mode = 2
-theme = ExtResource("16_0i1mh")
+theme = ExtResource("3_3qtp6")
 
 [node name="Label6" type="Label" parent="RPG Skills"]
 layout_mode = 2
-theme = ExtResource("16_0i1mh")
+theme = ExtResource("3_3qtp6")
 
 [node name="Label7" type="Label" parent="RPG Skills"]
 layout_mode = 2
-theme = ExtResource("16_0i1mh")
+theme = ExtResource("3_3qtp6")
 
 [node name="Label8" type="Label" parent="RPG Skills"]
 layout_mode = 2
-theme = ExtResource("16_0i1mh")
+theme = ExtResource("3_3qtp6")
 
 [node name="Label9" type="Label" parent="RPG Skills"]
 layout_mode = 2
-theme = ExtResource("16_0i1mh")
+theme = ExtResource("3_3qtp6")
 
 [connection signal="button_stop1" from="Play_game_ProgBar" to="Play_game_ProgBar/Play_game" method="_on_play_game_prog_bar_button_stop_1"]
 [connection signal="progbar_full_l" from="Play_game_ProgBar" to="Play_game_ProgBar/GridContainer/SoloQ_L_amount" method="_on_play_game_prog_bar_progbar_full_l"]
