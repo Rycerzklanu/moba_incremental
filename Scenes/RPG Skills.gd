@@ -6,10 +6,10 @@ extends GridContainer
 # mechanics
 # knowledge
 # champion mastery
-# 
+# teamplay
 #
 #
 
-# prestige variations:
+# prestige variables:
 # understanding
 #

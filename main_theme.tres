@@ -1,9 +1,9 @@
 [gd_resource type="Theme" load_steps=5 format=3 uid="uid://cmyvtqykhbior"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4gjw"]
-bg_color = Color(0.509804, 0.509804, 0.501961, 1)
+bg_color = Color(0.419608, 0.419608, 0.411765, 1)
 border_width_bottom = 10
-border_color = Color(0.384314, 0.384314, 0.376471, 1)
+border_color = Color(0.341176, 0.341176, 0.333333, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -31,9 +31,11 @@ corner_radius_bottom_left = 4
 [resource]
 default_base_scale = 1.0
 default_font_size = 35
+Button/colors/font_color = Color(0.807843, 0.807843, 0.807843, 1)
 Button/font_sizes/font_size = 30
 Button/styles/normal = SubResource("StyleBoxFlat_g4gjw")
 Button/styles/pressed = SubResource("StyleBoxFlat_l0dmm")
+Label/colors/font_color = Color(0.807843, 0.807843, 0.807843, 1)
 Label/font_sizes/font_size = 35
 ProgressBar/colors/font_color = Color(0.776471, 0.776471, 0.776471, 1)
 ProgressBar/styles/background = SubResource("StyleBoxFlat_28kh0")
