@@ -1,10 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://d2uxgs5muwiq8"]
+[gd_scene load_steps=23 format=3 uid="uid://d2uxgs5muwiq8"]
 
 [ext_resource type="Script" path="res://Scripts/UI_1/Tab1UI.gd" id="1_uw35b"]
 [ext_resource type="Script" path="res://Scripts/UI_1/Play_game_PB.gd" id="2_nmq3c"]
 [ext_resource type="Theme" uid="uid://cmyvtqykhbior" path="res://main_theme.tres" id="3_3qtp6"]
 [ext_resource type="Script" path="res://Scenes/Play_game.gd" id="4_mpswu"]
-[ext_resource type="Script" path="res://Scripts/UI_1/SoloQ_W_label.gd" id="6_87t2r"]
 [ext_resource type="Script" path="res://Scripts/UI_1/SoloQ_W_amount.gd" id="7_mbsye"]
 [ext_resource type="Script" path="res://Scripts/UI_1/SoloQ_L_amount.gd" id="8_4lyrx"]
 [ext_resource type="Script" path="res://Scripts/UI_1/SoloQ_WR_amount.gd" id="9_m3jr4"]
@@ -95,7 +94,6 @@ theme = ExtResource("3_3qtp6")
 text = "W:"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("6_87t2r")
 
 [node name="SoloQ_W_amount" type="Label" parent="Play_game_ProgBar/GridContainer"]
 layout_mode = 2
