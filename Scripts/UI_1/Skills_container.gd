@@ -1,8 +1,10 @@
 extends GridContainer
+
+#declare a variable that will serve as a skill level counter
 var skill_level_check = 0
 
 
-
+#on skill progbar fullfillment, switch the text on the button to the next skill
 func _on_learn_skill_prog_bar_skill_progbar_full():
 	skill_level_check += 1
 	

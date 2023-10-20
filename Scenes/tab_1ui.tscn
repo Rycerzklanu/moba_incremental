@@ -72,7 +72,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="Play_game_ProgBar"]
 process_callback = 0
-wait_time = 0.187
+wait_time = 0.05
 
 [node name="GridContainer" type="GridContainer" parent="Play_game_ProgBar"]
 layout_mode = 1

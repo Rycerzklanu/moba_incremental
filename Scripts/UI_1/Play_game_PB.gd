@@ -5,7 +5,6 @@ signal valchanged
 
 #define signal that will be emitted when the "Learn skill" button is pressed
 #the signal will cause the "Play game" button to unpress and stop the game progress
-#editor's note i guess - why not just send the Learn skill togglde signal to the play game button itself?
 signal button_stop1
 
 func _on_learn_skill_toggled(button_pressed):
