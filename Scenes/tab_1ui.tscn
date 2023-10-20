@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://d2uxgs5muwiq8"]
+[gd_scene load_steps=24 format=3 uid="uid://d2uxgs5muwiq8"]
 
 [ext_resource type="Script" path="res://Scripts/UI_1/Tab1UI.gd" id="1_uw35b"]
 [ext_resource type="Script" path="res://Scripts/UI_1/Play_game_PB.gd" id="2_nmq3c"]
 [ext_resource type="Theme" uid="uid://cmyvtqykhbior" path="res://main_theme.tres" id="3_3qtp6"]
+[ext_resource type="Script" path="res://Scenes/wchance_debug.gd" id="3_vji8d"]
 [ext_resource type="Script" path="res://Scenes/Play_game.gd" id="4_mpswu"]
 [ext_resource type="Script" path="res://Scripts/UI_1/SoloQ_W_amount.gd" id="7_mbsye"]
 [ext_resource type="Script" path="res://Scripts/UI_1/SoloQ_L_amount.gd" id="8_4lyrx"]
@@ -33,6 +34,19 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_3qtp6")
 script = ExtResource("1_uw35b")
+
+[node name="wchance_debug" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.456771
+anchor_top = 0.319444
+anchor_right = 0.714063
+anchor_bottom = 0.361111
+offset_right = 40.0
+offset_bottom = 49.0
+text = "wchance"
+script = ExtResource("3_vji8d")
+metadata/_edit_use_anchors_ = true
 
 [node name="Play_game_ProgBar" type="ProgressBar" parent="."]
 show_behind_parent = true

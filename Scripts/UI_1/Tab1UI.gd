@@ -5,7 +5,6 @@ var fullscreen_val = 0
 
 # declare the base win chance variable
 var wchance = 0.10
-
 #declare signals for game win and game loss events
 signal progbar_full_w
 signal progbar_full_l 
@@ -39,9 +38,8 @@ func _on_check_button_pressed():
 
 #calculate the result of the game based on current elo and skills 
 func _on_play_game_prog_bar_valchanged():
-	wchance = (0.1 + 0.2 * ($"RPG Skills/Vision_label".vision + $"RPG Skills/Mechanics_label".mechanics + $"RPG Skills/Knowledge_label".knowledge + $"RPG Skills/Teamplay_label".teamplay + $"RPG Skills/Champ_mast_label".champ_mastery)) * (1000/$Play_game_ProgBar/GridContainer/Elo_amount.elo)
-	#this is just for debug
-	print(wchance)
+	wchance = 0.1 + (0.1 * $Skills_container.skill_level_check + 1) * 10 / ($Play_game_ProgBar/GridContainer/Elo_amount.elo + 1)
+	
 	#picks a random number between 0 and 1, if the win chance variable
 	#is bigger than the picked number, the game is won
 	#else the game is lost
@@ -49,4 +47,5 @@ func _on_play_game_prog_bar_valchanged():
 		emit_signal("progbar_full_w")
 	else:
 		emit_signal("progbar_full_l")
+	
 

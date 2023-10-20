@@ -1,7 +1,7 @@
 extends Label
 
 #declare the elo variable
-var elo = 1000
+var elo = 1000.0
 
 #after each loss, take away 25 elo
 #if elo is less than 100, reset (this avoids dividing by 0 in the winrate formula)
