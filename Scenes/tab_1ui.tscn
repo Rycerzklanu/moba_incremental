@@ -319,7 +319,7 @@ script = ExtResource("21_gtyi2")
 [connection signal="progbar_full_w" from="." to="Play_game_ProgBar/GridContainer/Elo_amount" method="_on_tab_1ui_progbar_full_w"]
 [connection signal="progbar_full_w" from="." to="Player_exp_ProgBar" method="_on_tab_1ui_progbar_full_w"]
 [connection signal="button_stop1" from="Play_game_ProgBar" to="Play_game_ProgBar/Play_game" method="_on_play_game_prog_bar_button_stop_1"]
-[connection signal="valchanged" from="Play_game_ProgBar" to="." method="_on_play_game_prog_bar_valchanged"]
+[connection signal="game_over" from="Play_game_ProgBar" to="." method="_on_play_game_prog_bar_game_over"]
 [connection signal="toggled" from="Play_game_ProgBar/Play_game" to="Play_game_ProgBar" method="_on_play_game_toggled"]
 [connection signal="toggled" from="Play_game_ProgBar/Play_game" to="Skills_container/Learn_skill_ProgBar" method="_on_play_game_toggled"]
 [connection signal="timeout" from="Play_game_ProgBar/Timer" to="Play_game_ProgBar" method="_on_timer_timeout"]

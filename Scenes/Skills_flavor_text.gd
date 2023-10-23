@@ -2,8 +2,6 @@ extends Label
 
 var count = 0
 
-#after a skill is learned, set the flavor text to the appropiate label
-#based on the number in the if statement in the Skills_container node
 func _on_learn_skill_prog_bar_skill_progbar_full():
 	count += 1
 	if count in [1,2,13,19,47,62,63]:

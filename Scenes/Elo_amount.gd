@@ -1,11 +1,9 @@
 extends Label
 
-#declare the elo variable
-var elo = 1000.0
 
-#after each loss, take away 25 elo
-#if elo is less than 100, reset (this avoids dividing by 0 in the winrate formula)
-#and prevents quite the catastrophic crash (maybe I should just add 1 to the formula for safety?)
+var elo = 300
+
+
 func _on_tab_1ui_progbar_full_l():
 	elo -= 25
 	set_text(str(elo))
