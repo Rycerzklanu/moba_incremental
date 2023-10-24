@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://baaciauo3mwqu"]
+[gd_scene load_steps=4 format=3 uid="uid://baaciauo3mwqu"]
 
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_68t3i"]
 [ext_resource type="PackedScene" uid="uid://d2uxgs5muwiq8" path="res://Scenes/tab_1ui.tscn" id="1_72owr"]
+[ext_resource type="PackedScene" uid="uid://dnqudsf42xbqj" path="res://Scenes/save_system.tscn" id="2_0cr1w"]
 
 [node name="Node" type="Node"]
+script = ExtResource("1_68t3i")
 
 [node name="Tab1UI" parent="." instance=ExtResource("1_72owr")]
 metadata/_edit_group_ = true
+
+[node name="Save_system" parent="." instance=ExtResource("2_0cr1w")]

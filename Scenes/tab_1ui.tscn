@@ -25,7 +25,7 @@
 
 [sub_resource type="Theme" id="Theme_ani4c"]
 
-[node name="Tab1UI" type="Control"]
+[node name="Tab1UI" type="Control" groups=["Persist"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -48,7 +48,7 @@ text = "wchance"
 script = ExtResource("3_vji8d")
 metadata/_edit_use_anchors_ = true
 
-[node name="Play_game_ProgBar" type="ProgressBar" parent="."]
+[node name="Play_game_ProgBar" type="ProgressBar" parent="." groups=["Persist"]]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -84,7 +84,7 @@ text = "Play the game"
 script = ExtResource("4_mpswu")
 metadata/_edit_use_anchors_ = true
 
-[node name="Timer" type="Timer" parent="Play_game_ProgBar"]
+[node name="Timer" type="Timer" parent="Play_game_ProgBar" groups=["Persist"]]
 process_callback = 0
 wait_time = 0.05
 
@@ -109,7 +109,7 @@ text = "W:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SoloQ_W_amount" type="Label" parent="Play_game_ProgBar/GridContainer"]
+[node name="SoloQ_W_amount" type="Label" parent="Play_game_ProgBar/GridContainer" groups=["Persist"]]
 layout_mode = 2
 theme = ExtResource("3_3qtp6")
 text = "0"
@@ -124,7 +124,7 @@ text = "L:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SoloQ_L_amount" type="Label" parent="Play_game_ProgBar/GridContainer"]
+[node name="SoloQ_L_amount" type="Label" parent="Play_game_ProgBar/GridContainer" groups=["Persist"]]
 layout_mode = 2
 theme = ExtResource("3_3qtp6")
 text = "0"
@@ -139,7 +139,7 @@ text = "W/R:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SoloQ_WR_amount" type="Label" parent="Play_game_ProgBar/GridContainer"]
+[node name="SoloQ_WR_amount" type="Label" parent="Play_game_ProgBar/GridContainer" groups=["Persist"]]
 layout_mode = 2
 theme = ExtResource("3_3qtp6")
 horizontal_alignment = 1
@@ -150,13 +150,13 @@ script = ExtResource("9_m3jr4")
 layout_mode = 2
 text = "Elo:"
 
-[node name="Elo_amount" type="Label" parent="Play_game_ProgBar/GridContainer"]
+[node name="Elo_amount" type="Label" parent="Play_game_ProgBar/GridContainer" groups=["Persist"]]
 layout_mode = 2
 text = "1000
 "
 script = ExtResource("9_w537t")
 
-[node name="Player_exp_ProgBar" type="ProgressBar" parent="."]
+[node name="Player_exp_ProgBar" type="ProgressBar" parent="." groups=["Persist"]]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.193
@@ -171,7 +171,7 @@ theme = ExtResource("3_3qtp6")
 allow_greater = true
 script = ExtResource("10_chrru")
 
-[node name="Label" type="Label" parent="Player_exp_ProgBar"]
+[node name="Label" type="Label" parent="Player_exp_ProgBar" groups=["Persist"]]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.963
@@ -198,7 +198,7 @@ offset_bottom = -2.412
 text = "Experience"
 horizontal_alignment = 1
 
-[node name="Skills_container" type="GridContainer" parent="."]
+[node name="Skills_container" type="GridContainer" parent="." groups=["Persist"]]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.653667
@@ -221,17 +221,17 @@ toggle_mode = true
 text = "Plug in your monitor"
 script = ExtResource("11_fw10i")
 
-[node name="Learn_skill_ProgBar" type="ProgressBar" parent="Skills_container"]
+[node name="Learn_skill_ProgBar" type="ProgressBar" parent="Skills_container" groups=["Persist"]]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 theme = ExtResource("3_3qtp6")
 script = ExtResource("12_d7823")
 
-[node name="Timer" type="Timer" parent="Skills_container/Learn_skill_ProgBar"]
+[node name="Timer" type="Timer" parent="Skills_container/Learn_skill_ProgBar" groups=["Persist"]]
 process_callback = 0
 wait_time = 0.024
 
-[node name="Skills_flavor_text" type="Label" parent="Skills_container"]
+[node name="Skills_flavor_text" type="Label" parent="Skills_container" groups=["Persist"]]
 layout_mode = 2
 theme = ExtResource("3_3qtp6")
 horizontal_alignment = 1
@@ -280,32 +280,32 @@ theme_override_constants/v_separation = 4
 script = ExtResource("16_wgwvw")
 metadata/_edit_use_anchors_ = true
 
-[node name="Vision_label" type="Label" parent="RPG Skills"]
+[node name="Vision_label" type="Label" parent="RPG Skills" groups=["Persist"]]
 layout_mode = 2
 theme = ExtResource("3_3qtp6")
 script = ExtResource("18_85nc4")
 
-[node name="Mechanics_label" type="Label" parent="RPG Skills"]
+[node name="Mechanics_label" type="Label" parent="RPG Skills" groups=["Persist"]]
 layout_mode = 2
 theme = ExtResource("3_3qtp6")
 script = ExtResource("17_kqcnd")
 
-[node name="Knowledge_label" type="Label" parent="RPG Skills"]
+[node name="Knowledge_label" type="Label" parent="RPG Skills" groups=["Persist"]]
 layout_mode = 2
 theme = ExtResource("3_3qtp6")
 script = ExtResource("20_o75m5")
 
-[node name="Teamplay_label" type="Label" parent="RPG Skills"]
+[node name="Teamplay_label" type="Label" parent="RPG Skills" groups=["Persist"]]
 layout_mode = 2
 theme = ExtResource("3_3qtp6")
 script = ExtResource("22_rvp02")
 
-[node name="Champ_mast_label" type="Label" parent="RPG Skills"]
+[node name="Champ_mast_label" type="Label" parent="RPG Skills" groups=["Persist"]]
 layout_mode = 2
 theme = ExtResource("3_3qtp6")
 script = ExtResource("19_bn7ce")
 
-[node name="Understanding_label" type="Label" parent="RPG Skills"]
+[node name="Understanding_label" type="Label" parent="RPG Skills" groups=["Persist"]]
 layout_mode = 2
 theme = ExtResource("3_3qtp6")
 script = ExtResource("21_gtyi2")
